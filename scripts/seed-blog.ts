@@ -160,7 +160,7 @@ async function main() {
     }
 
     const dbCategories = await prisma.category.findMany();
-    const catMap = new Map(dbCategories.map(c => [c.slug, c.id]));
+    const catMap = new Map(dbCategories.map((c: { slug: string; id: string }) => [c.slug, c.id]));
 
     const articles = await loadArticles();
 
