@@ -1,0 +1,228 @@
+.section {
+    padding: 6rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.searchWrapper {
+    position: sticky;
+    top: 70px;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: -2rem;
+    margin-bottom: 4rem;
+}
+
+.searchContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.searchInput {
+    flex: 1;
+    background: #1e1e2e;
+    border: 1px solid #333;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 3rem;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+    border-color: #6366f1;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.searchBtn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 2rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.searchBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #6366f1;
+}
+
+.popularTopics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.topicTag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s;
+}
+
+.topicTag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #6366f1;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.howItWorks {
+    background: #0f172a;
+}
+
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stepCard {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stepIcon {
+    width: 50px;
+    height: 50px;
+    background: #1e1e2e;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #6366f1;
+}
+
+.stepTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stepDesc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.socialProof {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quoteCard {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.05));
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quoteText {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.quoteAuthor {
+    font-weight: 700;
+    color: #fff;
+}
+
+.quoteRole {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.ctaSection {
+    background: linear-gradient(90deg, #1e1b4b 0%, #312e81 100%);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 2rem;
+    margin: 4rem auto;
+    max-width: 1000px;
+}
+
+.ctaTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.ctaSub {
+    font-size: 1.25rem;
+    color: #c7d2fe;
+    margin-bottom: 2.5rem;
+}
+
+.ctaBtn {
+    background: #fff;
+    color: #4f46e5;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.ctaBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.expertGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.taskGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .expertGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .taskGrid {
+        grid-template-columns: 1fr;
+    }
+}

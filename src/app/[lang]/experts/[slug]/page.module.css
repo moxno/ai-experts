@@ -1,0 +1,258 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.backLink {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Hero & Header */
+.header {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.imageWrapper {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.filterOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), transparent 60%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 3.5rem;
+    font-family: var(--font-outfit);
+    margin-bottom: 0.5rem;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.company {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+/* Stats Bar */
+.statsBar {
+    display: flex;
+    gap: 3rem;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 0.2rem;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: #ccc;
+    border: 1px solid var(--border);
+}
+
+/* Content Sections */
+.bio {
+    margin-bottom: 5rem;
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 1.15rem;
+    max-width: 800px;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-family: var(--font-outfit);
+    margin-bottom: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Offerings Grid */
+.offeringsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.offeringCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, background 0.2s ease;
+    height: 100%;
+}
+
+.offeringCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+}
+
+.offeringHeader {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.offeringTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.offeringMeta {
+    display: flex;
+    gap: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.offeringDesc {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.offeringFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.priceLabel {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.priceValue {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.bookBtn {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+}
+
+.bookBtn:hover {
+    filter: brightness(110%);
+}
+
+/* Reviews */
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .imageWrapper {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    .info {
+        align-items: center;
+    }
+
+    .statsBar {
+        justify-content: center;
+    }
+
+    .offeringsGrid,
+    .reviewsGrid {
+        grid-template-columns: 1fr;
+    }
+}

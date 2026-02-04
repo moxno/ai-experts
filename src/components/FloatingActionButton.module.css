@@ -1,0 +1,53 @@
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.5rem;
+    /* LTR default */
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border-radius: 99px;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+    z-index: 1002;
+    /* Higher than header on mobile */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: none;
+    /* Hidden by default on desktop */
+}
+
+/* Show only on mobile/tablet */
+@media (max-width: 768px) {
+    .fab {
+        display: flex;
+        animation: slideUp 0.5s ease;
+    }
+}
+
+.fab:active {
+    transform: scale(0.95);
+}
+
+/* RTL Adjustment removed to keep FAB on the right side for better ergonomics */
+/* [dir="rtl"] .fab {
+    right: auto;
+    left: 1.5rem;
+} */
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
