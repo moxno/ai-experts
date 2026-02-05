@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Sparkles, Users, Calendar } from 'lucide-react';
 import styles from './Hero.module.css';
+import StarsBackground from './StarsBackground';
 
 export default function Hero({ lang, dict }: { lang: 'he' | 'en', dict: any }) {
     if (!dict) return <section className={styles.hero} style={{ minHeight: '90vh' }} />;
@@ -12,6 +13,7 @@ export default function Hero({ lang, dict }: { lang: 'he' | 'en', dict: any }) {
             className={styles.hero}
         >
             <div className={styles.heroBackground}>
+                <StarsBackground />
                 <div className={styles.overlay} />
             </div>
 
