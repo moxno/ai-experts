@@ -25,9 +25,19 @@ export default async function ExpertsPage(props: {
     const searchParams = await props.searchParams;
     const lang = params.lang;
     const dict = await getDictionary(lang as 'he' | 'en');
-    const specializations = await prisma.specialization.findMany({
-        orderBy: { name_en: 'asc' }
-    });
+
+    let specializations: any[] = [];
+    let experts: any[] = [];
+
+    try {
+        // Fetch specializations with timeout protection
+        specializations = await prisma.specialization.findMany({
+            orderBy: { name_en: 'asc' }
+        });
+    } catch (error) {
+        console.error('[ExpertsPage] Failed to fetch specializations:', error);
+        // Continue with empty array - page will still render
+    }
 
     // Build the query
     const where: any = { active: true };
@@ -56,12 +66,19 @@ export default async function ExpertsPage(props: {
         };
     }
 
-    const experts = await prisma.expert.findMany({
-        where,
-        take: 50, // Limit results for performance
-        orderBy: { average_rating: 'desc' },
-        include: { offerings: true, specializations_list: true }
-    });
+    try {
+        // Fetch experts with timeout protection
+        experts = await prisma.expert.findMany({
+            where,
+            take: 50, // Limit results for performance
+            orderBy: { average_rating: 'desc' },
+            include: { offerings: true, specializations_list: true }
+        });
+    } catch (error) {
+        console.error('[ExpertsPage] Failed to fetch experts:', error);
+        console.error('[ExpertsPage] Query params:', { lang, searchParams, where });
+        // Continue with empty array - page will show "no experts found" message
+    }
 
     return (
         <div>
