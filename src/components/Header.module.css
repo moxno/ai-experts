@@ -14,7 +14,7 @@
     transition: transform 0.3s ease, background 0.3s ease;
     transform: translate3d(0, 0, 0);
     will-change: transform;
-    /* overflow: hidden; Removed to fix mobile menu clipping */
+    overflow: visible;
     box-sizing: border-box;
 }
 

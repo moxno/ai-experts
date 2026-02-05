@@ -41,6 +41,7 @@ export default function UserDropdown({ lang, dict, session }: UserDropdownProps)
     return (
         <div className={styles.userDropdownContainer} ref={dropdownRef}>
             <button
+                type="button"
                 className={styles.userProfile}
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
