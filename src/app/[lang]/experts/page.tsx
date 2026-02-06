@@ -44,9 +44,9 @@ export default async function ExpertsPage(props: {
 
     if (searchParams.q) {
         where.OR = [
-            { name: { contains: searchParams.q, mode: 'insensitive' } },
-            { bio: { contains: searchParams.q, mode: 'insensitive' } },
-            { title: { contains: searchParams.q, mode: 'insensitive' } }
+            { name: { contains: searchParams.q } },
+            { bio: { contains: searchParams.q } },
+            { title: { contains: searchParams.q } }
         ];
     }
 
